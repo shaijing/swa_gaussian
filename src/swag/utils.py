@@ -23,7 +23,7 @@ def unflatten_like(vector, likeTensorList):
     for tensor in likeTensorList:
         # n = module._parameters[name].numel()
         n = tensor.numel()
-        outList.append(vector[:, i : i + n].view(tensor.shape))
+        outList.append(vector[:, i: i + n].view(tensor.shape))
         i += n
     return outList
 
@@ -47,14 +47,14 @@ def save_checkpoint(dir, epoch, name="checkpoint", **kwargs):
 
 
 def train_epoch(
-    loader,
-    model,
-    criterion,
-    optimizer,
-    cuda=True,
-    regression=False,
-    verbose=False,
-    subset=None,
+        loader,
+        model,
+        criterion,
+        optimizer,
+        cuda=True,
+        regression=False,
+        verbose=False,
+        subset=None,
 ):
     loss_sum = 0.0
     correct = 0.0
@@ -216,7 +216,6 @@ def bn_update(loader, model, verbose=False, subset=None, **kwargs):
             num_batches = int(num_batches * subset)
             loader = itertools.islice(loader, num_batches)
         if verbose:
-
             loader = tqdm.tqdm(loader, total=num_batches)
         for input, _ in loader:
             input = input.cuda(non_blocking=True)

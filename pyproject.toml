@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=65.5.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swag"
+version = "0.0.0"
+description = "SWA-Gaussian repo"
+readme = "README.md"
+authors = [
+    { name = "Wesley Maddox" },
+    { name = "Timur Garipov" },
+    { name = "Pavel Izmailov" },
+    { name = "Dmitry Vetrov" },
+    { name = "Andrew Gordon Wilson", email = "wm326@cornell.edu" },
+]
+license-files = ["LICENSE"]
+dependencies = [
+    "tqdm>=4.26.0",
+    "numpy>=1.22.0",
+    "torch>=1.5",
+    "torchvision>=0.4",
+    "gpytorch>=0.1.0rc4",
+    "tabulate>=0.8.2",
+    "linear-operator>=0.6",
+    "scipy>=1.1.0",
+    "setuptools>=65.5.1",
+    "matplotlib>=2.2.2",
+    "Pillow>=6.2.2",
+    "scikit_learn>=0.20.2",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/wjmaddox/swa_gaussian"
+
+[tool.setuptools.packages.find]
+include = ["swag"]
+where = ["src"]
